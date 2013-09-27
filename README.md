@@ -1,3 +1,3 @@
 # Gradle JavaFX Hello World example
 
-This example project applies the Gradle JavaFX plugin to build and run simple Hello World functionality. The JavaFX plugin provides tasks for the JavaFX Deployment tools in the Java 7 JDK. For more information see a tutorial on [Jaxenter](http://jaxenter.com/tutorial-a-guide-to-the-gradle-javafx-plugin-46270.html) and the [plugin author's blog](http://speling.shemnon.com/blog/2013/05/18/javafx-gradle-plugin-0-dot-3-0-released/).
+This example project applies the [Gradle JavaFX plugin](https://bitbucket.org/shemnon/javafx-gradle/) to build and run simple Hello World functionality. The JavaFX plugin provides tasks for the JavaFX Deployment tools in the Java 7 JDK. For more information see a tutorial on [Jaxenter](http://jaxenter.com/tutorial-a-guide-to-the-gradle-javafx-plugin-46270.html) and the [plugin author's blog](http://speling.shemnon.com/blog/2013/05/18/javafx-gradle-plugin-0-dot-3-0-released/).

@@ -1,0 +1,37 @@
+// Declares binary plugin and its required JavaFX classpath
+apply from: "http://dl.bintray.com/content/shemnon/javafx-gradle/0.3.0/javafx.plugin"
+
+// Configures plugin
+javafx {
+    // Points to JDK and its JavaFX libraries, also declares target runtime JDK
+    javaRuntime = '/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk'
+    
+    // Application name and ID presented by target OS
+    appID 'HelloWorldApp'
+    appName 'Hello World Application'
+    
+    // Main class of application
+    mainClass 'helloworld.HelloWorld'
+    
+    // JVM arguments, system properties, application command line arguments
+    jvmArgs = ['-XX:+AggressiveOpts', '-XX:CompileThreshold=1']
+    systemProperties = ['prism.disableRegionCaching':'true']
+    arguments = ['-l', '--fast']
+
+    // Keystore credentials for signing JAR
+    // Generate key: keytool -genkey -alias release -keyalg RSA -keystore keystore.jks -keysize 2048
+    releaseKey {
+        alias = 'release'
+        keyPass = getProjectProperty('keyStorePassword')
+        keyStore = file("${System.properties['user.home']}/keystore/keystore.jks")
+        storePass = getProjectProperty('storePassword')
+    }
+    
+    signingMode 'release'
+    
+    // ...
+}
+
+String getProjectProperty(String propertyName) {
+    project.hasProperty(propertyName) ? project.property(propertyName) : null
+}
